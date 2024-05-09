@@ -17,4 +17,18 @@ form{
         display: flex;
         justify-content: space-around;
     }
+
+    .apagando {
+        animation: fadeout 1s;
+    }
+    
+    @keyframes fadeout {
+        from {
+            opacity: 1;
+        }
+        to{
+            opacity: 0;
+        }
+    
+}
 }

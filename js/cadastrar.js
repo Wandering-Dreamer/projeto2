@@ -1,15 +1,23 @@
-document.querySelector("#botao-cadastrar").addEventListener("click", (e) => {
-        e.preventDefault()
-        
+
+document
+    .querySelector("#botao-cadastrar")
+    .addEventListener("click", (event) => {
+        event.preventDefault()
+
         const form = document.querySelector("form")
+
         const tarefa = {
+            id: "id" + new Date().getTime(),
             titulo: form.titulo.value,
             descricao: form.descricao.value,
-            pontos: form.pontos.value
+            pontos: form.pontos.value,
+            status: 0
         }
-        salvar(tarefa)
 
-})
+        console.log(form.titulo.value)
+
+        salvar(tarefa)
+    })
 
 function salvar(tarefa){
     const tarefas = JSON.parse(localStorage.getItem("tarefas")) || []
@@ -18,4 +26,3 @@ function salvar(tarefa){
 
     window.location = "index.html"
 }
-
